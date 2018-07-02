@@ -1,3 +1,73 @@
-body {
-  background: rgba(#333, 0.5);
+$green: #b6d034;
+$red: #F25D5F;
+$blue: #B3DFD8;
+$purple: #d89fc8;
+$grey: #F2F2F2;
+$yellow: #F2B705;
+$orange: #F25C05;
+
+
+$header: 'Rubik', sans-serif;
+$body: 'Roboto', sans-serif;
+
+/* General stuff */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, ul{
+	margin:0;
+	padding:0;
+}
+
+.slide{
+	height:100vh;
+}
+
+
+
+// Header
+header {
+  background: $grey;
+  font-family: $header;
+  h1{
+  	font-size: 100px;
+  	text-align: center;
+  	margin: 0 auto;
+  	max-width: 850px;
+  	text-shadow: -4px 6px $blue;
+	color:$red;
+	transform: rotate(-20deg);
+	margin-top: 50px;
+  }
+}
+
+
+
+// flights
+#flights{
+	background:$blue;
+}
+
+// rsvp
+#rsvp{
+	background:$orange;
+}
+
+// details
+#details{
+	background:$yellow;
+}
+
+// location
+#location{
+	background:$red;
+}
+
+// boston
+#boston{
+	background:$grey;
 }
