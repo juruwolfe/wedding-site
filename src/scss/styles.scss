@@ -1,14 +1,17 @@
 $green: #b6d034;
-$red: #F25D5F;
-$blue: #B3DFD8;
-$purple: #d89fc8;
-$grey: #F2F2F2;
-$yellow: #F2B705;
-$orange: #F25C05;
+$navy: #1b3977;
+$blue: #5762ab;
+$lavender: #987ab6;
+$purple: #a5177b;
+$pink:#e84d81;
+$red: #eb565d;
+$orange: #efa949;
+$yellow: #f0d775;
+$grey: #ededed;
 
 
-$header: 'Rubik', sans-serif;
-$body: 'Roboto', sans-serif;
+$header: 'Merriweather', serif;
+$body: 'Muli', sans-serif;
 
 /* General stuff */
 html {
@@ -16,6 +19,7 @@ html {
 }
 *, *:before, *:after {
   box-sizing: inherit;
+  font-family:$body;
 }
 
 body, h1, h2, h3, ul{
@@ -24,28 +28,67 @@ body, h1, h2, h3, ul{
 }
 
 .slide{
-	height:100vh;
+	min-height:100vh;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card{
+	background:$grey;
+	min-height:80vh;
+	min-width:70vw;
 }
 
 
 
 // Header
 header {
-  background: $grey;
-  font-family: $header;
+  background: $red;
+  font-family: $header; 
+  text-align: center;
+  color:$navy;
   h1{
-  	font-size: 100px;
-  	text-align: center;
-  	margin: 0 auto;
-  	max-width: 850px;
-  	text-shadow: -4px 6px $blue;
-	color:$red;
-	transform: rotate(-20deg);
-	margin-top: 50px;
+  	font-size: 70px;
+  	margin: 0px auto;
+  	font-weight:200;
+  	width:100%;
+  }
+  h2{
+  	font-family:$body;
+  	font-size: 32px;
+  	font-weight:200;
+  	width:100%;
+  }
+  .card{
+  	box-shadow: 5px 4px 8px 1px darken($red,20%);
+  	display: flex;
+  	flex-wrap: wrap;
+  	padding: 150px 100px;
+  }
+
+  .nav{
+  	width: 60%;
+  	display: flex;
+  	justify-content: space-between;
+  	margin:0 auto;
+	a{
+		text-decoration: none;
+		color:$navy;
+		font-size:20px;
+	}
   }
 }
 
+.bars{
 
+	width: 60%;
+	margin:40px auto;
+	hr{
+		border-width: 0.5px;
+		border-color:$red;
+	}
+}
 
 // flights
 #flights{
