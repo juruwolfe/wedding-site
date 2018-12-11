@@ -9,9 +9,8 @@ $orange: #efa949;
 $yellow: #f0d775;
 $grey: #ededed;
 
-
-$header: 'Merriweather', serif;
-$body: 'Muli', sans-serif;
+$header: 'Libre Baskerville', serif;
+$body: 'Montserrat', sans-serif;
 
 /* General stuff */
 html {
@@ -27,11 +26,44 @@ body, h1, h2, h3, ul{
 	padding:0;
 }
 
+// Dynamic colors
+.color-1{
+  background-color:$green;
+}
+.color-2{
+  background-color:$navy;
+}
+.color-3{
+  background-color:$blue;
+}
+.color-4{
+  background-color:$lavender;
+}
+.color-5{
+  background-color:$purple;
+}
+.color-6{
+  background-color:$pink;
+}
+.color-7{
+  background-color:$grey;
+}
+.color-8{
+  background-color:$orange;
+}
+.color-9{
+  background-color:$yellow;
+}
+.color-10{
+  background-color:$red;
+}
+
 .slide{
 	min-height:100vh;
 	display:flex;
 	justify-content: center;
 	align-items: center;
+  flex-wrap: wrap;
 }
 
 .card{
@@ -39,6 +71,8 @@ body, h1, h2, h3, ul{
 	min-height:80vh;
 	min-width:50vw;
 	width:80%;
+  position:relative;
+  z-index: 2;
 }
 
 
@@ -55,6 +89,10 @@ header {
   	font-weight:200;
   	width:100%;
   	font-family:$header;
+  }
+  .ital{
+    font-style: italic;
+    font-family: $header; 
   }
   h2{
   	font-family:$body;
@@ -74,11 +112,17 @@ header {
   	display: flex;
   	justify-content: space-between;
   	margin:0 auto 25px;
-	a{
-		text-decoration: none;
-		color:$navy;
-		font-size:20px;
-	}
+  	.nav-item{
+  		text-decoration: none;
+  		color:$navy;
+  		font-size:20px;
+      transition:all 0.25s;
+  	}
+    .nav-item:hover{
+      transform:scale(0.9);
+      transition:all 0.25s;
+      color:darken($navy, 15%);
+    }
   }
 
   .btn{
@@ -106,6 +150,49 @@ header {
 }
 
 
+// Background
+.bg-group{
+  display: flex;
+  width:100vw;
+  height:100vh;
+  flex-wrap: wrap;
+  position:absolute;
+  z-index:1;
+  top:0px;
+  overflow: hidden;
+}
+.confetti{
+  margin:0px 31px;
+  width:4px;
+  height:30px;
+  border-radius:500px;
+  transform:rotate(45deg);
+
+  &.color-1, &.color-6 {
+    animation: rotating 2s linear infinite;
+  }
+
+  &.color-2, &.color-7 {
+    animation: rotating 1s linear infinite;
+  }
+
+  &.color-3, &.color-8 {
+    animation: rotating 0.5s linear infinite;
+  }
+
+  &.color-4, &.color-9 {
+    animation: rotating 2.2s linear infinite;
+  }
+
+  &.color-5, &.color-10 {
+    animation: rotating 0.6s linear infinite;
+  }
+
+  &.color-5 {
+    animation: rotating 0.8s linear infinite;
+  }
+  
+}
 
 // flights
 #flights{
@@ -131,3 +218,15 @@ header {
 #boston{
 	background:$grey;
 }
+
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
