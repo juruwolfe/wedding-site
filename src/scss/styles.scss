@@ -69,6 +69,7 @@ body, h1, h2, h3, h4, ul{
   flex-wrap: wrap;
   position: relative;
   background-repeat: no-repeat;
+  overflow:hidden;
 }
 
 .card{
@@ -255,12 +256,37 @@ section .btn{
 .bg-group{
   display: flex;
   width:100vw;
-  height:100vh;
   flex-wrap: wrap;
   position:absolute;
   z-index:1;
   top:0px;
   overflow: hidden;
+
+  &:hover .confetti{
+    /*&.color-1, &.color-6 {
+        animation: rotating .5s infinite;
+      }
+
+      &.color-2, &.color-7 {
+        animation: rotating .8s infinite;
+      }
+
+      &.color-3, &.color-8 {
+        animation: rotating 1s infinite;
+      }*/
+
+      // &.color-4, &.color-9 {
+      //   animation: rotating .2s infinite;
+      // }
+
+      // &.color-5, &.color-10 {
+      //   animation: rotating .1s infinite;
+      // }
+
+      // &.color-5 {
+      //   animation: rotating 0.8s infinite;
+      // }
+  }
 }
 .confetti{
   margin:0px 31px;
@@ -269,7 +295,7 @@ section .btn{
   border-radius:500px;
   transform:rotate(45deg);
   &:hover{
-    animation: rotating 0.25s infinite;
+   
   }
 
   &:nth-child(even){
@@ -277,29 +303,71 @@ section .btn{
   }
 
   &.color-1, &.color-6 {
-    // animation: rotating 5s;
+    transform:rotate(30deg);
   }
 
   &.color-2, &.color-7 {
-    // animation: rotating 4s;
+    transform:rotate(10deg);
   }
 
   &.color-3, &.color-8 {
-    // animation: rotating 4s;
+    transform:rotate(120deg);
   }
 
   &.color-4, &.color-9 {
-    // animation: rotating 2s;
+    transform:rotate(90deg);
   }
 
   &.color-5, &.color-10 {
-    // animation: rotating 1s;
+    transform:rotate(60deg);
   }
 
   &.color-5 {
-    // animation: rotating 0.8s;
+    transform:rotate(200deg);
   }
   
+}
+
+
+.diamond{
+  width: 30px;
+  height: 30px;
+  border: 1px solid white;
+  transform: rotate(45deg);
+  margin:10px;
+  opacity:1;
+  opacity:0.5;
+  transition:all 0.25s;
+
+  &:hover{
+    opacity: 1;
+  }
+
+  &:nth-child(even){
+    width: 20px;
+    height: 20px;
+    margin-top:15px;
+  }
+
+  &:nth-child(5n+1):hover, &.sparkle{
+    background:$yellow;
+  }
+
+  &:nth-child(5n+2):hover, &.sparkle{
+    background:$red;
+  }
+
+  &:nth-child(5n+3):hover, &.sparkle{
+    background:$purple;
+  }
+
+  &:nth-child(5n+4):hover, &.sparkle{
+    background:$pink;
+  }
+
+  &:nth-child(5n+5):hover, &.sparkle{
+    background:$orange;
+  }
 }
 
 .btn {
