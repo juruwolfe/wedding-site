@@ -99,6 +99,10 @@ h2{
   width:100%;
 }
 
+h3{
+  margin: 0px auto;
+}
+
 
 // Header
 header {
@@ -228,6 +232,10 @@ section .btn{
   
 }
 
+.btn {
+  margin: 20px;
+}
+
 // flights
 .slide{
 
@@ -253,7 +261,7 @@ section .btn{
 
 // boston
 #rsvp, #rsvp .btn span{
-	background:$red;
+  background:$red;
 }
 
 
