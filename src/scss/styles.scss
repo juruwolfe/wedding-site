@@ -24,7 +24,7 @@ html {
   font-family:$body;
 }
 
-body, h1, h2, h3, ul{
+body, h1, h2, h3, h4, ul{
 	margin:0;
 	padding:0;
 }
@@ -107,6 +107,14 @@ h2{
   width:100%;
 }
 
+h3 {
+  margin: 0px auto;
+}
+
+h4 {
+  font-variant-numeric: tabular-nums;
+}
+
 
 // Header
 header {
@@ -130,6 +138,9 @@ header {
   	font-size: 32px;
   	font-weight:200;
   	width:100%;
+  }
+  h3, h4 {
+    width: 100%;
   }
   .card{
   	box-shadow: 5px 4px 8px 1px darken($red,20%);
@@ -248,6 +259,30 @@ section .btn{
   
 }
 
+.btn {
+  margin: 20px;
+}
+
+//cards
+
+.column {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.event {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  max-width: 300px;
+}
+
+.map {
+  width: 100%;
+}
 // flights
 .slide{
 
