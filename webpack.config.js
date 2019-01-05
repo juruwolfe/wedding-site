@@ -15,8 +15,14 @@ var mod = {
       'autoprefixer?browsers=last 2 versions',
       'sass?sourceMap'
     ]
-  }],
+  }, {
+    test: /\.(png|svg|jpg|gif)$/,
+    loaders: [
+      'file-loader'
+    ]
+  }]
 };
+
 
 var sassLoader = {
   includePaths: [
