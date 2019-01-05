@@ -268,20 +268,28 @@ section .btn{
 .column {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
   align-items: flex-start;
   align-content: flex-start;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .event {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row wrap;
   width: 100%;
-  max-width: 300px;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.text {
+  width: 225px;
+  margin-right: 20px;
 }
 
 .map {
   width: 100%;
+  max-width: 500px;
 }
 // flights
 .slide{
