@@ -68,8 +68,6 @@ body, h1, h2, h3, h4, ul{
 	align-items: center;
   flex-wrap: wrap;
   position: relative;
-  background-image: url('../images/watercolor-flower.png');
-  background-blend-mode: luminosity;
   background-repeat: no-repeat;
 }
 
@@ -81,10 +79,6 @@ body, h1, h2, h3, h4, ul{
 	width:80%;
   position:relative;
   z-index: 2;
-}
-
-.flower{
-  
 }
 
 // Typography
@@ -147,6 +141,7 @@ header {
   	display: flex;
   	flex-wrap: wrap;
   	padding: 120px 50px;
+    overflow:hidden;
   }
 
   .nav{
@@ -168,14 +163,55 @@ header {
     }
   }
 
-  .link-schedule{
+  .nav-item{
+    position:relative;
+    .link-text{
+      position:relative;
+      z-index: 5;
+      padding:20px 5px;
+    }
+    &:hover{
+      .link-text{
+        color:white;
+      }
+      .link-fill{
+        width:600px;
+        height:600px;
+        transition: width 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition-property: width, height;
+      }
+    }
     .link-fill{
       background:$blue;
       position:absolute;
+      pointer-events: none;
       display: block;
-      width:5px;
-      height: 5px;
+      width:0px;
+      height:0px;
+      left: 50%;
+      transform: translate(-50%, -50%);
       border-radius: 50%;
+      transition: width 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition-property: width, height;
+      opacity:0.8;
+    }
+
+    &.link-location{
+      .link-fill{
+        background: $yellow;
+      }
+    }
+
+    &.link-boston{
+      .link-fill{
+        background: $pink;
+      }
+    }
+
+    &.link-contact{
+      .link-fill{
+        background: $purple;
+      }
     }
   }
 
@@ -228,33 +264,40 @@ section .btn{
 }
 .confetti{
   margin:0px 31px;
-  width:4px;
-  height:30px;
+  width:5px;
+  height:20px;
   border-radius:500px;
   transform:rotate(45deg);
+  &:hover{
+    animation: rotating 0.25s infinite;
+  }
+
+  &:nth-child(even){
+    height:40px;
+  }
 
   &.color-1, &.color-6 {
-    animation: rotating 5s linear;
+    // animation: rotating 5s;
   }
 
   &.color-2, &.color-7 {
-    animation: rotating 4s linear;
+    // animation: rotating 4s;
   }
 
   &.color-3, &.color-8 {
-    animation: rotating 4s linear;
+    // animation: rotating 4s;
   }
 
   &.color-4, &.color-9 {
-    animation: rotating 2s linear;
+    // animation: rotating 2s;
   }
 
   &.color-5, &.color-10 {
-    animation: rotating 1s linear;
+    // animation: rotating 1s;
   }
 
   &.color-5 {
-    animation: rotating 0.8s linear;
+    // animation: rotating 0.8s;
   }
   
 }
@@ -340,7 +383,7 @@ section .btn{
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(180deg);
   }
 }
 

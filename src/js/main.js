@@ -25,7 +25,20 @@ class BgEffect {
 	}
 }
 
-// let confetti = new BgEffect("confetti");
+let confetti = new BgEffect("confetti");
+
+
+
+// Links on main page effect
+const linkFillEffect = () => {
+	$(".link-schedule").hover(function() {
+		$(this).children('.link-fill').addClass('grow')
+	}, function() {
+		$(this).children('.link-fill').removeClass('grow')
+	});
+}
+
+linkFillEffect();
 
 // Required on main file to accept hot reload
 if (module.hot) {
