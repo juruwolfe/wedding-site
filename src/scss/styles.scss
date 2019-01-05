@@ -2,7 +2,7 @@ $green: #b6d034;
 $navy: #1b3977;
 $blue: #5762ab;
 $lavender: #987ab6;
-$purple: #a5177b;
+$purple: #987ab6;
 $pink:#e84d81;
 $red: #eb565d;
 $orange: #efa949;
@@ -15,7 +15,9 @@ $body: 'Montserrat', sans-serif;
 /* General stuff */
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
   font-family:$body;
@@ -70,11 +72,31 @@ body, h1, h2, h3, ul{
 	background:$grey;
 	min-height:80vh;
 	min-width:50vw;
+  padding:50px;
 	width:80%;
   position:relative;
   z-index: 2;
 }
 
+// Typography
+h1{
+  font-size: 70px;
+  margin: 0px auto;
+  font-weight:200;
+  width:100%;
+  font-family:$header;
+  color:$navy;
+}
+.ital{
+  font-style: italic;
+  font-family: $header; 
+}
+h2{
+  font-family:$body;
+  font-size: 32px;
+  font-weight:200;
+  width:100%;
+}
 
 
 // Header
@@ -127,6 +149,7 @@ header {
 
   .btn{
   	width:100%;
+    text-decoration: none;
   	span{
   		width:120px;
   		background:$red;
@@ -134,6 +157,7 @@ header {
   		cursor:pointer;
   		padding:10px;
   		font-size:30px;
+
   	}
   }
 }
@@ -195,28 +219,31 @@ header {
 }
 
 // flights
-#flights{
+.slide{
+
+}
+#schedule{
 	background:$blue;
 }
 
 // rsvp
-#rsvp{
-	background:$orange;
-}
-
-// details
-#details{
+#location{
 	background:$yellow;
 }
 
+// details
+#boston{
+	background:$pink;
+}
+
 // location
-#location{
-	background:$red;
+#contact{
+	background:$purple;
 }
 
 // boston
-#boston{
-	background:$grey;
+#rsvp{
+	background:$red;
 }
 
 
