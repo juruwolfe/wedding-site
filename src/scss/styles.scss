@@ -68,6 +68,9 @@ body, h1, h2, h3, h4, ul{
 	align-items: center;
   flex-wrap: wrap;
   position: relative;
+  background-image: url('../images/watercolor-flower.png');
+  background-blend-mode: luminosity;
+  background-repeat: no-repeat;
 }
 
 .card{
@@ -78,6 +81,10 @@ body, h1, h2, h3, h4, ul{
 	width:80%;
   position:relative;
   z-index: 2;
+}
+
+.flower{
+  
 }
 
 // Typography
@@ -269,27 +276,42 @@ section .btn{
 
 }
 #schedule, #schedule .btn span{
-	background:$blue;
+	background-color:$blue;
+  .card{
+    box-shadow: 5px 4px 8px 1px darken($blue,10%);
+  }
 }
 
 // rsvp
 #location, #location .btn span{
-	background:$yellow;
+	background-color:$yellow;
+  .card{
+    box-shadow: 5px 4px 8px 1px darken($yellow,20%);
+  }
 }
 
 // details
 #boston, #boston .btn span{
-	background:$pink;
+	background-color:$pink;
+  .card{
+    box-shadow: 5px 4px 8px 1px darken($pink,20%);
+  }
 }
 
 // location
 #contact, #contact .btn span{
-	background:$purple;
+	background-color:$purple;
+  .card{
+    box-shadow: 5px 4px 8px 1px darken($purple,20%);
+  }
 }
 
 // boston
 #rsvp, #rsvp .btn span{
-  background:$red;
+	background-color:$red;
+  .card{
+    box-shadow: 5px 4px 8px 1px darken($red,20%);
+  }
 }
 
 

@@ -25,7 +25,7 @@ class BgEffect {
 	}
 }
 
-let confetti = new BgEffect("confetti");
+// let confetti = new BgEffect("confetti");
 
 // Required on main file to accept hot reload
 if (module.hot) {
