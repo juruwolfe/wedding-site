@@ -169,27 +169,27 @@ header {
   transform:rotate(45deg);
 
   &.color-1, &.color-6 {
-    animation: rotating 2s linear infinite;
+    animation: rotating 5s linear;
   }
 
   &.color-2, &.color-7 {
-    animation: rotating 1s linear infinite;
+    animation: rotating 4s linear;
   }
 
   &.color-3, &.color-8 {
-    animation: rotating 0.5s linear infinite;
+    animation: rotating 4s linear;
   }
 
   &.color-4, &.color-9 {
-    animation: rotating 2.2s linear infinite;
+    animation: rotating 2s linear;
   }
 
   &.color-5, &.color-10 {
-    animation: rotating 0.6s linear infinite;
+    animation: rotating 1s linear;
   }
 
   &.color-5 {
-    animation: rotating 0.8s linear infinite;
+    animation: rotating 0.8s linear;
   }
   
 }
