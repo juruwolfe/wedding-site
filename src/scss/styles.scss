@@ -66,6 +66,7 @@ body, h1, h2, h3, ul{
 	justify-content: center;
 	align-items: center;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .card{
@@ -147,19 +148,28 @@ header {
     }
   }
 
-  .btn{
-  	width:100%;
-    text-decoration: none;
-  	span{
-  		width:120px;
-  		background:$red;
-  		color:white;
-  		cursor:pointer;
-  		padding:10px;
-  		font-size:30px;
+}
 
-  	}
+.btn{
+  width:100%;
+  text-decoration: none;
+  span{
+    width:120px;
+    background:$red;
+    color:white;
+    cursor:pointer;
+    padding:10px;
+    font-size:30px;
+
   }
+}
+
+
+section .btn{
+  position: absolute;
+  top:30px;
+  right:20px;
+  width:auto;
 }
 
 .bars{
@@ -222,27 +232,27 @@ header {
 .slide{
 
 }
-#schedule{
+#schedule, #schedule .btn span{
 	background:$blue;
 }
 
 // rsvp
-#location{
+#location, #location .btn span{
 	background:$yellow;
 }
 
 // details
-#boston{
+#boston, #boston .btn span{
 	background:$pink;
 }
 
 // location
-#contact{
+#contact, #contact .btn span{
 	background:$purple;
 }
 
 // boston
-#rsvp{
+#rsvp, #rsvp .btn span{
 	background:$red;
 }
 
