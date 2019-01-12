@@ -26,7 +26,7 @@ class BgEffect {
 	}
 
 	diamonds(){
-		this.confetti_size = 2600;
+		this.confetti_size = 1200;
 		let squares = Math.floor(($(this.selector).width()*$(this.selector).height())/this.confetti_size);
 
 		let current_square = 0;
@@ -39,12 +39,12 @@ class BgEffect {
 				.append(new_diamond);
 		}
 
-		/*setInterval(()=>{
+		setInterval(()=>{
 			let seed = (Math.round(Math.random()*9)+1);
 
 			$(".diamond").removeClass('sparkle');
 			$(`.diamond:nth-child(3n+${seed})`).addClass('sparkle');
-		}, 500)*/
+		}, 500)
 	}
 }
 

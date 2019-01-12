@@ -1,10 +1,10 @@
 $green: #b6d034;
 $navy: #1b3977;
-$blue: #5762ab;
+$blue: #4665fd; //#5762ab
 $lavender: #987ab6;
-$purple: #987ab6;
-$pink:#e84d81;
-$red: #eb565d;
+$aquamarine: #46fdca;
+$magenta:#e347d1;
+$pink: #eb565d;
 $orange: #efa949;
 $yellow: #f0d775;
 $grey: #ededed;
@@ -24,7 +24,7 @@ html {
   font-family:$body;
 }
 
-body, h1, h2, h3, h4, ul{
+body, h1, h2, h3, h4, ul, p{
 	margin:0;
 	padding:0;
 }
@@ -43,10 +43,10 @@ body, h1, h2, h3, h4, ul{
   background-color:$lavender;
 }
 .color-5{
-  background-color:$purple;
+  background-color:$aquamarine;
 }
 .color-6{
-  background-color:$pink;
+  background-color:$magenta;
 }
 .color-7{
   background-color:$grey;
@@ -58,7 +58,7 @@ body, h1, h2, h3, h4, ul{
   background-color:$yellow;
 }
 .color-10{
-  background-color:$red;
+  background-color:$pink;
 }
 
 .slide{
@@ -70,6 +70,7 @@ body, h1, h2, h3, h4, ul{
   position: relative;
   background-repeat: no-repeat;
   overflow:hidden;
+  padding:50px 0;
 }
 
 .card{
@@ -94,16 +95,19 @@ h1{
 .ital{
   font-style: italic;
   font-family: $header; 
+  margin-top:8px;
+  line-height:1.4;
 }
 h2{
   font-family:$body;
   font-size: 32px;
   font-weight:200;
   width:100%;
+  text-align: center;
 }
 
 h3 {
-  margin: 0px auto;
+  margin: 0px auto 10px;
 }
 
 h4 {
@@ -113,7 +117,7 @@ h4 {
 
 // Header
 header {
-  background: $red;
+  background: $pink;
   font-family: $header; 
   text-align: center;
   color:$navy;
@@ -136,12 +140,15 @@ header {
   }
   h3, h4 {
     width: 100%;
+    font-weight: 200;
+    font-size: 23px;
+    line-height: 1.6;
   }
   .card{
-  	box-shadow: 5px 4px 8px 1px darken($red,20%);
+  	box-shadow: 5px 4px 8px 1px darken($pink,20%);
   	display: flex;
   	flex-wrap: wrap;
-  	padding: 120px 50px;
+  	padding: 80px 50px;
     overflow:hidden;
   }
 
@@ -178,7 +185,7 @@ header {
       .link-fill{
         width:600px;
         height:600px;
-        transition: width 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition: width 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         transition-property: width, height;
       }
     }
@@ -192,7 +199,7 @@ header {
       left: 50%;
       transform: translate(-50%, -50%);
       border-radius: 50%;
-      transition: width 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       transition-property: width, height;
       opacity:0.8;
     }
@@ -205,13 +212,13 @@ header {
 
     &.link-boston{
       .link-fill{
-        background: $pink;
+        background: $magenta;
       }
     }
 
     &.link-contact{
       .link-fill{
-        background: $purple;
+        background: $aquamarine;
       }
     }
   }
@@ -223,7 +230,7 @@ header {
   text-decoration: none;
   span{
     width:120px;
-    background:$red;
+    background:$pink;
     color:white;
     cursor:pointer;
     padding:10px;
@@ -247,7 +254,7 @@ section .btn{
 	hr{
 		width:40%;
 		border-width: 0.5px;
-		border-color:$red;
+		border-color:$pink;
 	}
 }
 
@@ -332,42 +339,42 @@ section .btn{
 .diamond{
   width: 30px;
   height: 30px;
-  border: 1px solid white;
+  border: 1px solid $magenta;
   transform: rotate(45deg);
-  margin:10px;
   opacity:1;
-  opacity:0.5;
-  transition:all 0.25s;
+  opacity:0.3;
 
-  &:hover{
+  &:hover, &.sparkle{
     opacity: 1;
   }
 
   &:nth-child(even){
-    width: 20px;
-    height: 20px;
-    margin-top:15px;
+    transform: rotate(60deg);
   }
 
-  &:nth-child(5n+1):hover, &.sparkle{
-    background:$yellow;
+  &:nth-child(5n+1){
+    border-color:white;
   }
 
-  &:nth-child(5n+2):hover, &.sparkle{
-    background:$red;
+  /*&:nth-child(5n+1){
+    border-color:$yellow;
   }
 
-  &:nth-child(5n+3):hover, &.sparkle{
-    background:$purple;
+  &:nth-child(5n+2){
+    border-color:$pink;
   }
 
-  &:nth-child(5n+4):hover, &.sparkle{
-    background:$pink;
+  &:nth-child(5n+3){
+    border-color:$aquamarine;
   }
 
-  &:nth-child(5n+5):hover, &.sparkle{
-    background:$orange;
+  &:nth-child(5n+4){
+    border-color:$magenta;
   }
+
+  &:nth-child(5n+5){
+    border-color:$orange;
+  }*/
 }
 
 .btn {
@@ -375,6 +382,9 @@ section .btn{
 }
 
 //cards
+.column-grid{
+  text-align:center;
+}
 
 .column {
   display: flex;
@@ -383,25 +393,42 @@ section .btn{
   align-content: flex-start;
   width: 100%;
   margin-bottom: 20px;
+
 }
 
 .event {
   display: flex;
   flex-flow: row wrap;
   width: 100%;
-  margin-top: 20px;
-  margin-right: 20px;
+  justify-content: center;
+  margin:5px;
+  border:1px solid $blue;
+  min-height:450px;
+  align-items: center;
 }
 
 .text {
   width: 30%;
-  min-width: 270px;
+  min-width: 300px;
   margin-right: 20px;
+  text-align:left;
+  margin-top:-15px;
 }
 
 .map {
   width: 100%;
-  max-width: 500px;
+  max-width: 199px;
+  margin: 20px;
+  iframe{
+    border: 3px solid #ff4141 !important;
+    transform: rotate(-10deg);
+    filter: hue-rotate(236deg) saturate(5);
+
+  }
+
+  &.reverse iframe{
+    transform:rotate(10deg);
+  }
 }
 // flights
 .slide{
@@ -409,8 +436,25 @@ section .btn{
 }
 #schedule, #schedule .btn span{
 	background-color:$blue;
+
+  .bold{
+    color:$blue;
+  }
   .card{
     box-shadow: 5px 4px 8px 1px darken($blue,10%);
+  }
+
+  h2{
+    padding: 0 0 6px 0;
+    color: $blue;
+    max-width:780px;
+    margin:50px auto 0;
+  }
+
+  .column{
+    max-width: 400px;
+    display: inline-block;
+    vertical-align: top;
   }
 }
 
@@ -424,25 +468,25 @@ section .btn{
 
 // details
 #boston, #boston .btn span{
-	background-color:$pink;
+	background-color:$magenta;
   .card{
-    box-shadow: 5px 4px 8px 1px darken($pink,20%);
+    box-shadow: 5px 4px 8px 1px darken($magenta,20%);
   }
 }
 
 // location
 #contact, #contact .btn span{
-	background-color:$purple;
+	background-color:$aquamarine;
   .card{
-    box-shadow: 5px 4px 8px 1px darken($purple,20%);
+    box-shadow: 5px 4px 8px 1px darken($aquamarine,20%);
   }
 }
 
 // boston
 #rsvp, #rsvp .btn span{
-	background-color:$red;
+	background-color:$pink;
   .card{
-    box-shadow: 5px 4px 8px 1px darken($red,20%);
+    box-shadow: 5px 4px 8px 1px darken($pink,20%);
   }
 }
 
