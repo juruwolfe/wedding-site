@@ -269,8 +269,18 @@ section .btn{
   top:0px;
   overflow: hidden;
 
+  &:hover .sparkle{
+    opacity: 1;
+  }
+
+  // &:hover .spin{
+  //   animation: rotating 1s infinite;
+  //   animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  // }
+
   &:hover .confetti{
-    /*&.color-1, &.color-6 {
+
+    &.color-1, &.color-6 {
         animation: rotating .5s infinite;
       }
 
@@ -280,19 +290,19 @@ section .btn{
 
       &.color-3, &.color-8 {
         animation: rotating 1s infinite;
-      }*/
+      }
 
-      // &.color-4, &.color-9 {
-      //   animation: rotating .2s infinite;
-      // }
+      &.color-4, &.color-9 {
+        animation: rotating .2s infinite;
+      }
 
-      // &.color-5, &.color-10 {
-      //   animation: rotating .1s infinite;
-      // }
+      &.color-5, &.color-10 {
+        animation: rotating .1s infinite;
+      }
 
-      // &.color-5 {
-      //   animation: rotating 0.8s infinite;
-      // }
+      &.color-5 {
+        animation: rotating 0.8s infinite;
+      }
   }
 }
 .confetti{
@@ -336,17 +346,16 @@ section .btn{
 }
 
 
+
 .diamond{
   width: 30px;
   height: 30px;
   border: 1px solid $magenta;
   transform: rotate(45deg);
   opacity:1;
-  opacity:0.3;
+  opacity:0.5;
 
-  &:hover, &.sparkle{
-    opacity: 1;
-  }
+  
 
   &:nth-child(even){
     transform: rotate(60deg);
@@ -354,6 +363,7 @@ section .btn{
 
   &:nth-child(5n+1){
     border-color:white;
+    opacity:0.3;
   }
 
   /*&:nth-child(5n+1){
@@ -430,10 +440,8 @@ section .btn{
     transform:rotate(10deg);
   }
 }
-// flights
-.slide{
+// Schedule
 
-}
 #schedule, #schedule .btn span{
 	background-color:$blue;
 
@@ -482,12 +490,42 @@ section .btn{
   }
 }
 
-// boston
+// Rsvp
 #rsvp, #rsvp .btn span{
 	background-color:$pink;
   .card{
     box-shadow: 5px 4px 8px 1px darken($pink,20%);
   }
+}
+
+.heart {
+  position: relative;
+  width: 56px;
+  height: 50px;
+  opacity: 0.2;
+  transition: all 0.25s;
+  &:hover, &.sparkle{
+    opacity:1;
+    transition: all 1s;
+  }
+}
+.heart:before,
+.heart:after {
+  position: absolute;
+  content: "";
+  left: 20px;
+  top: 0;
+  width: 21px;
+  height: 35px;
+  background: white;
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+.heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
 }
 
 @keyframes rotating {
