@@ -206,13 +206,13 @@ header {
 
     &.link-location{
       .link-fill{
-        background: $yellow;
+        background: $magenta;
       }
     }
 
     &.link-boston{
       .link-fill{
-        background: $magenta;
+        background: $yellow;
       }
     }
 
@@ -404,6 +404,13 @@ section .btn{
   width: 100%;
   margin-bottom: 20px;
 
+
+}
+
+.column-three{
+  max-width: 400px;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .event {
@@ -415,6 +422,16 @@ section .btn{
   border:1px solid $blue;
   min-height:450px;
   align-items: center;
+  h2{
+    padding: 0 0 6px 0;
+    max-width:780px;
+    margin:50px auto 0;
+  }
+}
+
+.event-large{
+  border: none;
+  min-height: auto;
 }
 
 .text {
@@ -453,32 +470,61 @@ section .btn{
   }
 
   h2{
-    padding: 0 0 6px 0;
     color: $blue;
-    max-width:780px;
-    margin:50px auto 0;
   }
 
-  .column{
-    max-width: 400px;
-    display: inline-block;
-    vertical-align: top;
-  }
+  
 }
 
 // rsvp
 #location, #location .btn span{
-	background-color:$yellow;
+	background-color:$magenta;
   .card{
-    box-shadow: 5px 4px 8px 1px darken($yellow,20%);
+    box-shadow: 5px 4px 8px 1px darken($magenta,20%);
+  }
+
+  .map{
+    margin-right:60px;
+    iframe{
+      filter: hue-rotate(274deg) saturate(5);
+    }
+  }
+
+  h2{
+    text-align:left;
+  }
+
+  h2, h3, a{
+    color: $magenta;
+  }
+
+  .column-three{
+    margin-right: 10px;
+
+    .event{
+      min-height: 290px;
+      align-items: start;
+      padding-top: 25px;
+      border-color:$magenta;
+      box-shadow: 1px 1px 0 1px $magenta;
+    }
+
+    .text{
+      margin-top:0;
+    }
+
+    p{
+      margin-bottom:10px;
+    }
+    
   }
 }
 
 // details
 #boston, #boston .btn span{
-	background-color:$magenta;
+	background-color:$yellow;
   .card{
-    box-shadow: 5px 4px 8px 1px darken($magenta,20%);
+    box-shadow: 5px 4px 8px 1px darken($yellow,20%);
   }
 }
 
