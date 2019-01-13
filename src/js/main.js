@@ -60,6 +60,39 @@ class BgEffect {
 		});
 	}
 
+	lightening(){
+		let bolt_html = `<div class="lightning"><div class="toptri"></div><div class="bottri"></div></div>`;
+		this.bg_size = 2200;
+		let bolts = Math.floor(($(this.selector).width()*$(this.selector).height())/this.bg_size);
+
+		let current_bolt = 0;
+		console.log($(this.selector).width())
+
+		while (current_bolt < bolts) {
+			current_bolt ++;
+			$(this.selector).children('.bg-group')
+				.append(bolt_html);
+		}
+
+		let shoot_bolt;
+
+		$(this.selector+" .bg-group").hover(function() {
+			shoot_bolt = window.setInterval(() => {
+				let bolt_n = document.querySelectorAll(".lightning").length;
+						let seed = (Math.round(Math.random()*bolt_n)+1);
+
+						$(`.lightning:nth-child(${seed})`).animate({
+							"left": -500, 
+							"top": 4000
+						}, 500)
+					}, 10, function(){
+						$(`.lightning:nth-child(${seed})`).remove();
+					})
+		}, function() {
+			clearInterval(shoot_bolt);
+		});
+	}
+
 	hearts(){
 		this.bg_size = 550;
 		let hearts = Math.floor(($(this.selector).width()*$(this.selector).height())/this.bg_size);
@@ -90,6 +123,7 @@ class BgEffect {
 
 let confetti = new BgEffect("confetti", '#header');
 let diamonds = new BgEffect("diamonds", '#schedule');
+let bolts = new BgEffect("lightening", '#location');
 let hearts = new BgEffect("hearts", '#rsvp');
 
 

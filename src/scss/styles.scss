@@ -485,6 +485,8 @@ section .btn{
 
   .map{
     margin-right:60px;
+    margin-top:70px;
+    max-width:500px;
     iframe{
       filter: hue-rotate(274deg) saturate(5);
     }
@@ -513,11 +515,66 @@ section .btn{
       margin-top:0;
     }
 
-    p{
+  }
+  p{
       margin-bottom:10px;
     }
-    
-  }
+}
+
+$bolt-color: $yellow;
+.lightning {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    left:-20px;
+    transform: scale(0.1);
+    opacity: 0.5;
+
+    &:nth-child(even){
+      left:-30px;
+      top:10px;
+    }
+
+    .above, .below {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 100px;
+    }
+
+    .toptri {
+        position: absolute;
+        height: 196px;
+        width: 0px;
+        padding: 0px;
+        top: -175px;
+        left: 300px;
+        -webkit-transform: rotate(0deg) skew(141deg);
+        transform: rotate(0deg) skew(141deg);
+        border-top: 0px transparent;
+        border-left: 0px solid transparent;
+        border-right: 128px solid transparent;
+        border-bottom: 284px solid $bolt-color;
+        -webkit-transform: rotate(350deg) skew(141deg);
+        transform: rotate(350deg) skew(141deg);
+    }
+
+    .bottri {
+        position: absolute;
+        height: 200px;
+        width: 0px;
+        padding: 0px;
+        top: 119px;
+        left: 147px;
+        -webkit-transform: rotate(0deg) skew(141deg);
+        transform: rotate(0deg) skew(141deg);
+        border-top: 0px transparent;
+        border-left: 0px solid transparent;
+        border-right: 118px solid transparent;
+        border-bottom: 320px solid $bolt-color;
+        -webkit-transform: rotate(170deg) skew(141deg);
+        transform: rotate(175deg) skew(141deg);
+    }
 }
 
 // details
