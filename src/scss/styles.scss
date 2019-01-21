@@ -218,7 +218,7 @@ header {
 
     &.link-contact{
       .link-fill{
-        background: $aquamarine;
+        background: $green;
       }
     }
   }
@@ -477,7 +477,7 @@ section .btn{
 }
 
 // rsvp
-#location, #location .btn span{
+#location, #location .btn span, #boston{
 	background-color:$magenta;
   .card{
     box-shadow: 5px 4px 8px 1px darken($magenta,20%);
@@ -583,13 +583,102 @@ $bolt-color: $yellow;
   .card{
     box-shadow: 5px 4px 8px 1px darken($yellow,20%);
   }
+
+  .bg-group{
+    height:100%;
+  }
+
+  .map iframe{
+    filter: hue-rotate(0deg) saturate(5);
+    border: 3px solid #f3d762 !important;
+  }
+
+  h2, a{
+    color:$blue;
+  }
 }
+
+.ocean { 
+  height: 5%;
+  width:100%;
+  margin-top:-30px;
+  &.reverse{
+    .wave{
+      margin-left:-2000px;
+      &.animate{
+        animation: wave-reverse 19s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite;
+      }
+    }
+  }
+}
+
+/*.wave {
+  background: url("../images/wave.svg") repeat-x; 
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  transform: translate3d(0, 0, 0);
+  &.animate{
+    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+  }
+}
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  opacity: 1;
+  &.animate{
+    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+  }
+}*/
+
+.wave{
+  background-color:transparent;
+  fill:#fff;
+  background-size:500px;
+  width: 500%;
+  opacity: 0.3;
+  height: 167px;
+  background-repeat:repeat;
+  background-image:url("data:image/svg+xml;charset=utf8,%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500' fill-opacity='1' style='enable-background:new 0 0 500 500'%3E%3Cstyle%3E .st1{fill:rgba(255,255,255,1)} %3C/style%3E%3Cpath style='fill:none;stroke:rgba(255,255,255,1);stroke-width:50;stroke-miterlimit:10' d='M-44-184l83 92 83-92 83 92 83-92 83 92 83-92 83 92 83-92'/%3E%3Cpath class='st1' d='M.8 500L-101 387.4l37.2-33.5L.8 425.4l83.1-92 83.2 92 83.2-92 83.1 92 83.2-92 83.2 92 64.6-71.5 37.2 33.5L499.8 500l-83.2-92-83.2 92-83.1-92-83.2 92-83.2-92zM.8 333.3L-101 220.7l37.2-33.4L.8 258.7l83.1-92 83.2 92 83.2-92 83.1 92 83.2-92 83.2 92 64.6-71.4 37.2 33.4-101.8 112.6-83.2-92-83.2 92-83.1-92-83.2 92-83.2-92zM.8 166.6L-101 54.1l37.2-33.5L.8 92 83.9 0l83.2 92 83.2-92 83.1 92 83.2-92 83.2 92 64.6-71.4 37.2 33.5-101.8 112.5-83.2-92-83.2 92-83.1-92-83.2 92-83.2-92z'/%3E%3C/svg%3E");
+  &.animate{
+    animation: wave 15s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite;
+  }
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes wave-reverse {
+  0% {
+    margin-left: -2000px;
+  }
+  100% {
+    margin-left: 1600px;
+  }
+}
+
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0,-25px,0);
+  }
+  50% {
+    transform: translate3d(0,5px,0);
+  }
+}
+
 
 // location
 #contact, #contact .btn span{
-	background-color:$aquamarine;
+	background-color:$green;
   .card{
-    box-shadow: 5px 4px 8px 1px darken($aquamarine,20%);
+    box-shadow: 5px 4px 8px 1px darken($green,20%);
   }
 }
 

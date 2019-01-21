@@ -9,6 +9,8 @@ const isOnScreen = (element) => {
     return (curTop > screenHeight) ? false : true;
 }
 
+
+
 class BgEffect {
 	constructor(effect, selection){
 		this.selector = selection;
@@ -93,6 +95,14 @@ class BgEffect {
 		});
 	}
 
+	wave(){
+		$(this.selector+" .bg-group").hover(function() {
+			$(".wave").addClass('animate');
+		}, function() {
+			$(".wave").removeClass('animate');
+		});
+	}
+
 	hearts(){
 		this.bg_size = 550;
 		let hearts = Math.floor(($(this.selector).width()*$(this.selector).height())/this.bg_size);
@@ -124,6 +134,7 @@ class BgEffect {
 let confetti = new BgEffect("confetti", '#header');
 let diamonds = new BgEffect("diamonds", '#schedule');
 let bolts = new BgEffect("lightening", '#location');
+let wave = new BgEffect("wave", '#boston');
 let hearts = new BgEffect("hearts", '#rsvp');
 
 
