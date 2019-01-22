@@ -12,6 +12,10 @@ $grey: #ededed;
 $header: 'Libre Baskerville', serif;
 $body: 'Montserrat', sans-serif;
 
+$mobile: "(max-width: 767px)";
+$tablet: "(min-width: 768px) and (max-width: 1023px)";
+$desktop: "(min-width: 1024px)";
+
 /* General stuff */
 html {
   box-sizing: border-box;
@@ -81,6 +85,10 @@ body, h1, h2, h3, h4, ul, p{
 	width:80%;
   position:relative;
   z-index: 2;
+  @media #{$mobile} {
+    padding:15px;
+    width:95%;
+  }
 }
 
 // Typography
@@ -91,6 +99,11 @@ h1{
   width:100%;
   font-family:$header;
   color:$navy;
+  @media #{$mobile} {
+    font-size: 40px;
+    text-align: center;
+    margin:20px 0;
+  }
 }
 .ital{
   font-style: italic;
@@ -104,6 +117,9 @@ h2{
   font-weight:200;
   width:100%;
   text-align: center;
+  @media #{$mobile} {
+    font-size: 28px;
+  }
 }
 
 h3 {
@@ -121,6 +137,11 @@ header {
   font-family: $header; 
   text-align: center;
   color:$navy;
+  .btn{
+    @media #{$mobile} {
+      display: block;
+    }
+  }
   h1{
   	font-size: 70px;
   	margin: 0px auto;
@@ -149,6 +170,9 @@ header {
   	display: flex;
   	flex-wrap: wrap;
   	padding: 80px 50px;
+    @media #{$mobile} {
+      padding: 50px 50px;
+    }
     overflow:hidden;
   }
 
@@ -157,12 +181,19 @@ header {
   	display: flex;
   	justify-content: space-between;
   	margin:0 auto 25px;
+    @media #{$mobile} {
+      display: block;
+    }
   	.nav-item{
   		text-decoration: none;
   		color:$navy;
   		font-size:20px;
       transition:all 0.25s;
       margin:0 40px;
+      @media #{$mobile} {
+        display: block;
+        margin:10px 0;
+      }
   	}
     .nav-item:hover{
       transform:scale(0.9);
@@ -180,13 +211,19 @@ header {
     }
     &:hover{
       .link-text{
-        color:white;
+        
+        @media #{$desktop} {
+          color:white;
+        }
       }
       .link-fill{
         width:600px;
         height:600px;
         transition: width 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         transition-property: width, height;
+        @media #{$mobile} {
+          display: none;
+        }
       }
     }
     .link-fill{
@@ -202,6 +239,9 @@ header {
       transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       transition-property: width, height;
       opacity:0.8;
+      @media #{$mobile} {
+        display: none;
+      }
     }
 
     &.link-location{
@@ -228,6 +268,9 @@ header {
 .btn{
   width:100%;
   text-decoration: none;
+  @media #{$mobile} {
+    display: none;
+  }
   span{
     width:120px;
     background:$pink;
@@ -456,6 +499,10 @@ section .btn{
   &.reverse iframe{
     transform:rotate(10deg);
   }
+
+  &.no-tilt iframe{
+    transform: rotate(0deg);
+  }
 }
 // Schedule
 
@@ -494,14 +541,23 @@ section .btn{
 
   h2{
     text-align:left;
+    @media #{$mobile} {
+      text-align: center;
+    }
   }
 
   h2, h3, a{
     color: $magenta;
+
   }
 
   .column-three{
     margin-right: 10px;
+
+    @media #{$mobile} {
+      margin: 0 auto;
+      display: block;
+    }
 
     .event{
       min-height: 290px;
@@ -606,7 +662,7 @@ $bolt-color: $yellow;
     .wave{
       margin-left:-2000px;
       &.animate{
-        animation: wave-reverse 19s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite;
+        // animation: wave-reverse 19s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite;
       }
     }
   }
@@ -635,14 +691,14 @@ $bolt-color: $yellow;
 .wave{
   background-color:transparent;
   fill:#fff;
-  background-size:500px;
+  background-size:100px;
   width: 500%;
   opacity: 0.3;
   height: 167px;
   background-repeat:repeat;
   background-image:url("data:image/svg+xml;charset=utf8,%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500' fill-opacity='1' style='enable-background:new 0 0 500 500'%3E%3Cstyle%3E .st1{fill:rgba(255,255,255,1)} %3C/style%3E%3Cpath style='fill:none;stroke:rgba(255,255,255,1);stroke-width:50;stroke-miterlimit:10' d='M-44-184l83 92 83-92 83 92 83-92 83 92 83-92 83 92 83-92'/%3E%3Cpath class='st1' d='M.8 500L-101 387.4l37.2-33.5L.8 425.4l83.1-92 83.2 92 83.2-92 83.1 92 83.2-92 83.2 92 64.6-71.5 37.2 33.5L499.8 500l-83.2-92-83.2 92-83.1-92-83.2 92-83.2-92zM.8 333.3L-101 220.7l37.2-33.4L.8 258.7l83.1-92 83.2 92 83.2-92 83.1 92 83.2-92 83.2 92 64.6-71.4 37.2 33.4-101.8 112.6-83.2-92-83.2 92-83.1-92-83.2 92-83.2-92zM.8 166.6L-101 54.1l37.2-33.5L.8 92 83.9 0l83.2 92 83.2-92 83.1 92 83.2-92 83.2 92 64.6-71.4 37.2 33.5-101.8 112.5-83.2-92-83.2 92-83.1-92-83.2 92-83.2-92z'/%3E%3C/svg%3E");
   &.animate{
-    animation: wave 15s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite;
+    animation: wave 45s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite;
   }
 }
 
