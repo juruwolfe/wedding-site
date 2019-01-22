@@ -739,11 +739,15 @@ $bolt-color: $yellow;
 }
 
 // Rsvp
-#rsvp, #rsvp .btn span{
+#rsvp {
 	background-color:$pink;
   .card{
     box-shadow: 5px 4px 8px 1px darken($pink,20%);
   }
+}
+
+#rsvp .btn span {
+  display: none;
 }
 
 .heart {
