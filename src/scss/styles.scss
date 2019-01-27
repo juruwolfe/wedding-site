@@ -730,11 +730,41 @@ $bolt-color: $yellow;
 }
 
 
-// location
+// Contact & Rsvp
 #contact, #contact .btn span{
 	background-color:$green;
   .card{
     box-shadow: 5px 4px 8px 1px darken($green,20%);
+  }
+
+  .dot{
+    background:white;
+    width:4px;
+    height:4px;
+    border-radius: 50%;
+    opacity: 0.6;
+    margin: 22px 25px;
+    &.large{
+      width:8px;
+      height: 8px;
+      margin-top: 14px;
+    }
+    &.pulse .radar{
+      width: 10px;
+      height: 10px;
+      background-color: transparent;
+      position: relative;
+      left: 50%;
+      margin-left: -4px;
+      top: 50%;
+      margin-top: -4px;
+      border-radius: 50%;
+      border: 2px solid white;
+      animation: ping 2s infinite;
+      -webkit-animation: ping 2s infinite;
+      -webkit-transition: all ease-in-out;
+      transition: all ease-in;
+    }
   }
 }
 
@@ -780,12 +810,31 @@ $bolt-color: $yellow;
   transform-origin: 100% 100%;
 }
 
+
+// Animations 
 @keyframes rotating {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(180deg);
+  }
+}
+
+@keyframes ping {
+  1% {
+    width: 5px;
+    height: 5px;
+    border-color: white;
+    opacity: 1;
+  }
+  100% {
+    width: 30px;
+    height: 30px;
+    margin-left: -15px;
+    margin-top: -15px;
+    border-color: white;
+    opacity: 0;
   }
 }
 

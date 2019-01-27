@@ -103,6 +103,34 @@ class BgEffect {
 		});
 	}
 
+	dots(){
+		this.bg_size = 350;
+		let dots = Math.floor(($(this.selector).width()*$(this.selector).height())/this.bg_size);
+
+		let current_dot = 0;
+
+		while (current_dot < dots) {
+			current_dot ++;
+			let class_list = Math.random()*2 > 1.1 ? "dot large" : "dot";
+			let new_dot = `<div class="${class_list}"><div class="radar"><div></div>`
+			$(this.selector).children('.bg-group')
+				.append(new_dot);
+		}
+
+
+		let dot_pulse;
+		$(this.selector+" .bg-group").hover(function() {
+			dot_pulse = window.setInterval(() => {
+				let seed = (Math.round(Math.random()*9)+1);
+
+				$(".dot").removeClass('pulse');
+				$(`.dot:nth-child(9n+${seed})`).addClass('pulse');
+			}, 3000)
+		}, function() {
+			clearInterval(dot_pulse);
+		});
+	}
+
 	hearts(){
 		this.bg_size = 550;
 		let hearts = Math.floor(($(this.selector).width()*$(this.selector).height())/this.bg_size);
@@ -135,6 +163,7 @@ let confetti = new BgEffect("confetti", '#header');
 let diamonds = new BgEffect("diamonds", '#schedule');
 let bolts = new BgEffect("lightening", '#location');
 let wave = new BgEffect("wave", '#boston');
+let dots = new BgEffect("dots", '#contact');
 let hearts = new BgEffect("hearts", '#rsvp');
 
 
