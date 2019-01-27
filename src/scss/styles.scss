@@ -75,6 +75,9 @@ body, h1, h2, h3, h4, ul, p{
   background-repeat: no-repeat;
   overflow:hidden;
   padding:50px 0;
+  @media #{$mobile} {
+    padding:0;
+  }
 }
 
 .card{
@@ -149,6 +152,9 @@ header {
   	width:100%;
   	font-family:$header;
     color:$navy;
+    @media #{$mobile} {
+      font-size: 45px;
+    }
   }
   .ital{
     font-style: italic;
@@ -159,12 +165,18 @@ header {
   	font-size: 32px;
   	font-weight:200;
   	width:100%;
+    @media #{$mobile} {
+      font-size: 25px;
+    }
   }
   h3, h4 {
     width: 100%;
     font-weight: 200;
     font-size: 23px;
     line-height: 1.6;
+    @media #{$mobile} {
+      font-size: 18px;
+    }
   }
   .card{
   	box-shadow: 5px 4px 8px 1px darken($pink,20%);
@@ -194,6 +206,7 @@ header {
       @media #{$mobile} {
         display: block;
         margin:10px 0;
+        font-size:18px;
       }
   	}
     .nav-item:hover{
@@ -766,6 +779,7 @@ $bolt-color: $yellow;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    min-height: 400px;
     justify-content: space-between;
   }
 
