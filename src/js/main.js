@@ -127,6 +127,7 @@ class BgEffect {
 				$(`.dot:nth-child(9n+${seed})`).addClass('pulse');
 			}, 3000)
 		}, function() {
+			$(".dot").removeClass('pulse');
 			clearInterval(dot_pulse);
 		});
 	}
