@@ -98,7 +98,7 @@ h1{
   font-weight:200;
   width:100%;
   font-family:$header;
-  color:$navy;
+  color:#222;
   @media #{$mobile} {
     font-size: 40px;
     text-align: center;
@@ -148,6 +148,7 @@ header {
   	font-weight:200;
   	width:100%;
   	font-family:$header;
+    color:$navy;
   }
   .ital{
     font-style: italic;
@@ -451,10 +452,8 @@ section .btn{
 }
 
 .column-two {
-    width: 49%;
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 20px;
+    width: 100%;
+    max-width: 450px;
 }
 
 .column-three{
@@ -510,6 +509,11 @@ section .btn{
   &.no-tilt iframe{
     transform: rotate(0deg);
   }
+}
+
+.item{
+  padding: 20px;
+  border: 21px solid #afd300;
 }
 // Schedule
 
@@ -756,6 +760,13 @@ $bolt-color: $yellow;
       -webkit-transition: all ease-in-out;
       transition: all ease-in;
     }
+  }
+
+  .flex-wrap{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .text{
