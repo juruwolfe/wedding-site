@@ -2,13 +2,7 @@
 require('../scss/styles.scss');
 import $ from 'jquery';
 
-const isOnScreen = (element) => {
-    var curPos = element.offset();
-    var curTop = curPos.top;
-    var screenHeight = $(window).height();
-    return (curTop > screenHeight) ? false : true;
-}
-
+const isMobile = window.innerWidth < 950;
 
 
 class BgEffect {
@@ -52,11 +46,11 @@ class BgEffect {
 
 		$(this.selector+" .bg-group").hover(function() {
 			sparkle = window.setInterval(() => {
-						let seed = (Math.round(Math.random()*9)+1);
+			let seed = (Math.round(Math.random()*9)+1);
 
-						$(".diamond").removeClass('sparkle');
-						$(`.diamond:nth-child(3n+${seed})`).addClass('sparkle');
-					}, 500)
+			$(".diamond").removeClass('sparkle');
+			$(`.diamond:nth-child(3n+${seed})`).addClass('sparkle');
+		}, 500)
 		}, function() {
 			clearInterval(sparkle);
 		});
@@ -160,12 +154,15 @@ class BgEffect {
 	}
 }
 
-let confetti = new BgEffect("confetti", '#header');
-let diamonds = new BgEffect("diamonds", '#schedule');
-let bolts = new BgEffect("lightening", '#location');
-let wave = new BgEffect("wave", '#boston');
-let dots = new BgEffect("dots", '#contact');
-let hearts = new BgEffect("hearts", '#rsvp');
+if (!isMobile) {
+	let confetti = new BgEffect("confetti", '#header');
+	let diamonds = new BgEffect("diamonds", '#schedule');
+	let bolts = new BgEffect("lightening", '#location');
+	let wave = new BgEffect("wave", '#boston');
+	let dots = new BgEffect("dots", '#contact');
+	let hearts = new BgEffect("hearts", '#rsvp');
+}
+
 
 
 

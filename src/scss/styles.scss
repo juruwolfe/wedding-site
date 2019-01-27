@@ -658,6 +658,9 @@ $bolt-color: $yellow;
   height: 5%;
   width:100%;
   margin-top:-30px;
+  @media #{$mobile} {
+    display: none;
+  }
   &.reverse{
     .wave{
       margin-left:-2000px;
@@ -668,25 +671,6 @@ $bolt-color: $yellow;
   }
 }
 
-/*.wave {
-  background: url("../images/wave.svg") repeat-x; 
-  position: absolute;
-  top: -198px;
-  width: 6400px;
-  height: 198px;
-  transform: translate3d(0, 0, 0);
-  &.animate{
-    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
-  }
-}
-
-.wave:nth-of-type(2) {
-  top: -175px;
-  opacity: 1;
-  &.animate{
-    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
-  }
-}*/
 
 .wave{
   background-color:transparent;
