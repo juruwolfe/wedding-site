@@ -450,6 +450,13 @@ section .btn{
 
 }
 
+.column-two {
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 20px;
+}
+
 .column-three{
   max-width: 400px;
   display: inline-block;
@@ -749,6 +756,18 @@ $bolt-color: $yellow;
       -webkit-transition: all ease-in-out;
       transition: all ease-in;
     }
+  }
+
+  .text{
+    margin-top:0;
+  }
+
+  p{
+    margin: 10px 0;
+  }
+
+  a{
+    color:$magenta;
   }
 }
 
