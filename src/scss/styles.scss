@@ -471,6 +471,10 @@ section .btn{
 
 .column-three{
   max-width: 400px;
+  width:32.5%;
+  @media #{$mobile} {
+    width:100%;
+  }
   display: inline-block;
   vertical-align: top;
 }
@@ -502,6 +506,11 @@ section .btn{
   margin-right: 20px;
   text-align:left;
   margin-top:-15px;
+  @media #{$mobile} {
+    min-width: 100%;
+    margin: 0;
+    padding: 10px;
+  }
 }
 
 .map {
@@ -542,6 +551,15 @@ section .btn{
 
   h2{
     color: $blue;
+  }
+
+  .event{
+    padding:0 10px;
+  }
+
+  .text{
+    min-width: auto;
+    width:100%;
   }
 
   
