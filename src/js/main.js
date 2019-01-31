@@ -25,7 +25,7 @@ class BgEffect {
 			$(this.selector).children('.bg-group')
 				.append(new_confett);
 		}
-		$(`.confetti:nth-child(3n+5`).addClass('spin');
+		$(`.confetti:nth-of-type(3n+5`).addClass('spin');
 	}
 
 	diamonds(){
@@ -33,7 +33,6 @@ class BgEffect {
 		let squares = Math.floor(($(this.selector).width()*$(this.selector).height())/this.confetti_size);
 
 		let current_square = 0;
-		console.log($(this.selector).width())
 
 		while (current_square < squares) {
 			current_square ++;
@@ -49,7 +48,7 @@ class BgEffect {
 			let seed = (Math.round(Math.random()*9)+1);
 
 			$(".diamond").removeClass('sparkle');
-			$(`.diamond:nth-child(3n+${seed})`).addClass('sparkle');
+			$(`.diamond:nth-of-type(3n+${seed})`).addClass('sparkle');
 		}, 500)
 		}, function() {
 			clearInterval(sparkle);
@@ -62,7 +61,6 @@ class BgEffect {
 		let bolts = Math.floor(($(this.selector).width()*$(this.selector).height())/this.bg_size);
 
 		let current_bolt = 0;
-		console.log($(this.selector).width())
 
 		while (current_bolt < bolts) {
 			current_bolt ++;
@@ -77,12 +75,12 @@ class BgEffect {
 				let bolt_n = document.querySelectorAll(".lightning").length;
 						let seed = (Math.round(Math.random()*bolt_n)+1);
 
-						$(`.lightning:nth-child(${seed})`).animate({
+						$(`.lightning:nth-of-type(${seed})`).animate({
 							"left": -500, 
 							"top": 4000
 						}, 500)
 					}, 10, function(){
-						$(`.lightning:nth-child(${seed})`).remove();
+						$(`.lightning:nth-of-type(${seed})`).remove();
 					})
 		}, function() {
 			clearInterval(shoot_bolt);
@@ -118,7 +116,7 @@ class BgEffect {
 				let seed = (Math.round(Math.random()*9)+1);
 
 				$(".dot").removeClass('pulse');
-				$(`.dot:nth-child(9n+${seed})`).addClass('pulse');
+				$(`.dot:nth-of-type(9n+${seed})`).addClass('pulse');
 			}, 3000)
 		}, function() {
 			$(".dot").removeClass('pulse');
@@ -131,7 +129,6 @@ class BgEffect {
 		let hearts = Math.floor(($(this.selector).width()*$(this.selector).height())/this.bg_size);
 
 		let current_heart = 0;
-		console.log($(this.selector).width())
 
 		while (current_heart < hearts) {
 			current_heart ++;
@@ -146,7 +143,7 @@ class BgEffect {
 				let seed = (Math.round(Math.random()*9)+1);
 
 				$(".heart").removeClass('sparkle');
-				$(`.heart:nth-child(9n+${seed})`).addClass('sparkle');
+				$(`.heart:nth-of-type(9n+${seed})`).addClass('sparkle');
 			}, 1000)
 		}, function() {
 			clearInterval(heart_sparkle);
